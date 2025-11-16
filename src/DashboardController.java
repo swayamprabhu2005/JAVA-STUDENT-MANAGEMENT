@@ -5,8 +5,12 @@ import javafx.collections.ObservableList; //auto-updates the TableView
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class DashboardController {
 
@@ -107,7 +111,21 @@ public class DashboardController {
 
         studentTable.refresh();
     }
-
+    @FXML 
+    public void handleLogout() {
+        try {
+            // Load login page again
+            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Stage loginStage = new Stage();
+            loginStage.setTitle("Login");
+            loginStage.setScene(new Scene(root, 400, 300));
+            loginStage.show();
+            // Close the dashboard window
+            studentTable.getScene().getWindow().hide();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     private void fillInputsFromSelection(MouseEvent e) {
         Student s = studentTable.getSelectionModel().getSelectedItem();
         if (s == null) return;
