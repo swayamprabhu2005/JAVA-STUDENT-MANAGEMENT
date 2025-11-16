@@ -6,7 +6,7 @@
 
 <VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx/17" 
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="DashboardController">
-
+      <!-- All un-prefixed tags (VBox, Label, Button, etc.) belong to JavaFX version 17. -->
     <padding>
         <Insets top="15" right="15" bottom="15" left="15"/>
     </padding>

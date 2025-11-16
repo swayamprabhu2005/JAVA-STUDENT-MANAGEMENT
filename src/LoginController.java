@@ -34,7 +34,7 @@ public class LoginController {
     private void openDashboard() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
-
+            // Creates a new window
             Stage stage = new Stage();
             stage.setTitle("Student Dashboard");
             stage.setScene(new Scene(root, 600, 400));

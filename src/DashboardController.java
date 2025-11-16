@@ -1,7 +1,7 @@
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.collections.ObservableList; //auto-updates the TableView
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
@@ -33,7 +33,7 @@ public class DashboardController {
         courseCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getCourse()));
 
         studentList.addAll(DataStore.loadStudents());
-
+               // for searching
         filteredList = new FilteredList<>(studentList, p -> true);
 
         searchField.textProperty().addListener((obs, oldValue, newValue) -> {

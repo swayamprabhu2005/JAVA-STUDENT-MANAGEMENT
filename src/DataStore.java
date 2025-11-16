@@ -12,7 +12,7 @@ public class DataStore {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
-    // ---------------- LOGIN VALIDATION ----------------
+    // Login validation
     public static boolean validateLogin(String username, String password) {
         String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
 
@@ -31,7 +31,7 @@ public class DataStore {
         }
     }
 
-    // ---------------- LOAD STUDENTS ----------------
+    //Load students
     public static List<Student> loadStudents() {
         List<Student> list = new ArrayList<>();
         String sql = "SELECT id, name, email, course FROM students";
@@ -54,7 +54,7 @@ public class DataStore {
         return list;
     }
 
-    // ---------------- INSERT STUDENT ----------------
+    // Insert student
     public static void insertStudent(Student s) {
         String sql = "INSERT INTO students (name, email, course) VALUES (?, ?, ?)";
 
@@ -71,7 +71,7 @@ public class DataStore {
         }
     }
 
-    // ---------------- DELETE STUDENT ----------------
+    // Delete student
     public static void deleteStudent(int id) {
         String sql = "DELETE FROM students WHERE id = ?";
 
@@ -86,7 +86,7 @@ public class DataStore {
         }
     }
 
-    // ---------------- UPDATE STUDENT ----------------
+    // Update student
     public static void updateStudent(int id, String name, String email, String course) {
         String sql = "UPDATE students SET name = ?, email = ?, course = ? WHERE id = ?";
 
