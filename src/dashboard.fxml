@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx/17" 
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="DashboardController">
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <!-- TITLE -->
+    <Label text="Student Management" 
+           style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+    <!-- SEARCH BAR -->
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="searchField" promptText="Search by name, email, or course..." 
+                   prefWidth="400" />
+    </HBox>
+
+    <!-- TABLE -->
+    <TableView fx:id="studentTable" prefHeight="300" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="idCol" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="nameCol" text="Name" prefWidth="150"/>
+            <TableColumn fx:id="emailCol" text="Email" prefWidth="200"/>
+            <TableColumn fx:id="courseCol" text="Course" prefWidth="200"/>
+        </columns>
+    </TableView>
+
+    <!-- INPUT FIELDS -->
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="nameField" promptText="Name" prefWidth="150" />
+        <TextField fx:id="emailField" promptText="Email" prefWidth="200" />
+        <TextField fx:id="courseField" promptText="Course" prefWidth="150" />
+    </HBox>
+
+    <!-- BUTTONS -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Add Student" onAction="#handleAddStudent" 
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+
+        <Button text="Update Student" onAction="#handleUpdateStudent"
+                style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+
+        <Button text="Delete Student" onAction="#handleDeleteStudent" 
+                style="-fx-background-color: #F44336; -fx-text-fill: white;"/>
+    </HBox>
+
+</VBox>
